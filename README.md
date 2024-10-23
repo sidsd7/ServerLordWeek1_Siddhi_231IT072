@@ -10,7 +10,10 @@
 
 Resources :
 [Docker](https://www.youtube.com/watch?v=Ud7Npgi6x8E)
+
 [Docker compose](https://www.youtube.com/watch?v=HGKfE-cn9y4&t=111s)
+
 [Installation](https://medium.com/@tomer.klein/step-by-step-tutorial-installing-docker-and-docker-compose-on-ubuntu-a98a1b7aaed0https://www.youtube.com/watch?v=HGKfE-cn9y4&t=111s)
+
 [Inspiration for our application](https://healthchecks.io/)
    
