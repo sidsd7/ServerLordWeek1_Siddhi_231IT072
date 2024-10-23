@@ -1,7 +1,7 @@
 # ServerLordWeek1
 
 
-1. Fork this repository as ServerLordWeek1_<Name>_<RollNo>
+1. Fork this repository as ServerLordWeek1<Name><RollNo>
 2. Dockerise the python app and expose it on port 5050 using port mapping 
 3. Make >2 instances of the application and create a docker network using docker-compose containing all the instances and a nginx proxy that distributes the load and is visible on port 80 of host machine
 4. Start with a round robin algorithm for load balancing and explore other options
