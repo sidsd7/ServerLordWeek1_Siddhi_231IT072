@@ -1,20 +1,18 @@
 # ServerLordWeek1
 
+## Explanation
+- I have created a Dockerfile that sets up a python 3.9 environment, installs dependencies from requirements.txt, exposes the main.py file on port 5050, and runs this main.py file in the /app directory.
+- The nginx.config file configures nginx as a reverse proxy with load balancing, forwarding requests to the instances of the Flask app.
+- The docker-compose.yml file defines two services (flask application and nginx reverse proxy) with port mapping and dependencies. It sets up a shared network (app-network) between the two services.
+- By default round robin algorithm is used for laod balancing the multiple instances of the Flask app, for fair distribution. 
 
-1. Fork this repository as ServerLordWeek1_Name_RollNo
-2. Dockerise the python app and expose it on port 5050 using port mapping 
-3. Make >2 instances of the application and create a docker network using docker-compose containing all the instances and a nginx proxy that distributes the load and is visible on port 80 of host machine
-4. Start with a round robin algorithm for load balancing and explore other options
-5. What algorithm do you think will best suit the needs of a multi tenant SAAS like our cron job manager application? Give your justification in the README.
-6. Give a demonstration of the whole set-up (steps 3-5) through screen shots and brief explanations.
+## Demonstration
+![Screenshot 2024-11-03 171516](https://github.com/user-attachments/assets/7e2ffb99-2c64-422e-b978-99bdcced2114)
+![Screenshot 2024-11-03 171151](https://github.com/user-attachments/assets/9b62c7b9-9ff9-4566-b65e-07a2489d20bd)
+![Screenshot 2024-11-03 172455](https://github.com/user-attachments/assets/b175286f-00de-4bc8-84e7-32c311e74d8c)
+![Screenshot 2024-11-03 172524](https://github.com/user-attachments/assets/937678b7-ec0b-4324-a22c-096363e0d461)
+![Screenshot 2024-11-03 172600](https://github.com/user-attachments/assets/cdd8c19f-9f54-4c27-93a2-cfcf4d5d6b7a)
 
-Resources :
 
-[Docker](https://www.youtube.com/watch?v=Ud7Npgi6x8E)
-
-[Docker compose](https://www.youtube.com/watch?v=HGKfE-cn9y4&t=111s)
-
-[Installation](https://medium.com/@tomer.klein/step-by-step-tutorial-installing-docker-and-docker-compose-on-ubuntu-a98a1b7aaed0https://www.youtube.com/watch?v=HGKfE-cn9y4&t=111s)
-
-[Inspiration for our application](https://healthchecks.io/)
-   
+## Best algorithm for cron job manager application
+I believe that for a multi tenant SaaS like the cron job manager, the weighted round robin algorithm would best suit it's needs. This is because the higher priority jobs will be served more frequently. So this ensures the fair utilization of resources while keeping in mind the priorities. 
